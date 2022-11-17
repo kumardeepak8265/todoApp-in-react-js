@@ -1,7 +1,10 @@
+import NavBar from "./Component/Navbar.jsx";
+import TodoPage from "./TodoPage.jsx";
 function App() {
   return (
-    <div className="bg-green-400">
-      <h1 className="">my name is deepak</h1>
+    <div className="">
+      <NavBar></NavBar>
+      <TodoPage></TodoPage>
     </div>
   );
 }

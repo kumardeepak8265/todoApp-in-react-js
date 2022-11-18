@@ -21,30 +21,32 @@ const TodoPage = () => {
   const handleFormControl = () => {
     setForm(!form);
   };
-
+  const todoPageRefresh = () => {
+    setTodo(todoInitilaData);
+    setDoneTodo(doneTodoinitialData);
+    console.log("working");
+  };
   const saveTodo = () => {
     setForm(!form);
     if (inputValue === "") {
-      console.log("inputvalue", inputValue);
-    }
-    if (inputValue === " ") {
-      console.log("inputvaluespace", inputValue);
+      return;
     }
     setTodo([...todo, inputValue]);
     setinputValue("");
   };
+
   const changeInputValue = (event) => {
-    console.log("event", String(event.target.value));
     setinputValue(event.target.value);
   };
+
   const todoDone = (t) => {
     const doneWalaTodo = todo.filter(function (todo) {
       return todo !== t;
     });
-
     setDoneTodo([...doneTodo, t]);
     setTodo([...doneWalaTodo]);
   };
+
   const todoNotDone = (t) => {
     const NotdoneWalaTodo = doneTodo.filter(function (todo) {
       return todo !== t;
@@ -52,6 +54,7 @@ const TodoPage = () => {
     setDoneTodo([...NotdoneWalaTodo]);
     setTodo([...todo, t]);
   };
+
   const deleteTodo = (t) => {
     const filterTodo = todo.filter(function (todo) {
       return todo !== t;
@@ -62,9 +65,10 @@ const TodoPage = () => {
     setDoneTodo([...filterDoneTodo]);
     setTodo([...filterTodo]);
   };
+
   return (
     <div className="px-4 sm:px-6 lg:px-8 ">
-      <Header></Header>
+      <Header Refresh={todoPageRefresh}></Header>
       <legend className="text-lg font-medium leading-6 text-gray-900">
         Things to do
       </legend>

@@ -1,6 +1,6 @@
 import Button from "./Button";
 import { memo } from "react";
-const Header = () => {
+const Header = ({ Refresh }) => {
   console.log("header reanunig");
   return (
     <div className=" md:flex md:items-center md:justify-between my-8">
@@ -10,7 +10,7 @@ const Header = () => {
         </h1>
       </div>
       <div className="flex mt-4 md:mt-0 md:ml-4">
-        <Button>Refresh</Button>
+        <Button onClick={Refresh}>Refresh</Button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import NavBar from "./Component/Navbar.jsx";
+import NavBar from "./Component/NavBar.jsx";
 import TodoPage from "./TodoPage.jsx";
 function App() {
   return (
